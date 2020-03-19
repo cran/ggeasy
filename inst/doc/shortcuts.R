@@ -1,16 +1,16 @@
-## ---- warning = FALSE, message = FALSE-----------------------------------
+## ---- warning = FALSE, message = FALSE----------------------------------------
 library(ggplot2)
 library(patchwork)
 library(labelled)
 library(ggeasy)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 p <- ggplot(mtcars, aes(hp, mpg)) + geom_point()
 
-## ---- fig.width = 5, fig.height = 5--------------------------------------
+## ---- fig.width = 5, fig.height = 5-------------------------------------------
 p + labs(title = "ggplot2 default")
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## ---- fig.width = 8, fig.height = 8-------------------------------------------
 p1 <- p + 
     easy_rotate_x_labels() + 
     labs(title = "default rotation")
@@ -26,7 +26,7 @@ p4 <- p +
 
 (p1 + p2) / (p3 + p4)
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## ---- fig.width = 8, fig.height = 8-------------------------------------------
 p <- ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
     geom_point()
 
@@ -44,7 +44,7 @@ p4 <- p +
 
 (p1 + p2) / (p3 + p4)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 ## create a copy of the iris data
 iris_labs <- iris
 
@@ -52,7 +52,7 @@ iris_labs <- iris
 lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower\nSpecies')
 var_label(iris_labs) <- split(lbl, names(iris_labs))
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## ---- fig.width = 8, fig.height = 8-------------------------------------------
 p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
     geom_line(aes(colour = Species))
 
@@ -74,7 +74,7 @@ p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
 (p1 + p2) / (p3 + p4)
 
 
-## ---- fig.width = 8, fig.height = 8--------------------------------------
+## ---- fig.width = 8, fig.height = 8-------------------------------------------
 p4 + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
     facet_wrap(~Species) + 
     easy_labs() + 
