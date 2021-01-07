@@ -1,10 +1,12 @@
 context("adjust text sizes")
 
+expect_eqNe <- function(...) expect_equal(..., check.environment = FALSE)
+
 expect_equal_with_reorder <- function(easy, hard, debug = FALSE) {
     for (x in names(hard)) {
         for (y in names(hard[x])) {
             if (debug) message("testing: ", x, "[", y, "]")
-            expect_equal(hard[[x]][[y]], easy[[x]][[y]])
+            expect_eqNe(hard[[x]][[y]], easy[[x]][[y]])
         }
     }
 }
@@ -208,4 +210,12 @@ test_that("set text colors", {
     easy_res_axis_color_man <- p + easy_change_text(which = "axis.text", what = "color", to = "red")
     expect_equal_with_reorder(hard_res_axis_color_man, easy_res_axis_color_man)
 
+})
+
+context("text alignment")
+
+test_that("easy_center_title works", {
+  easy_res <- p + easy_center_title()
+  hard_res <- p + ggplot2::theme(plot.title = element_text(hjust = .5))
+  expect_eqNe(easy_res, hard_res)
 })
