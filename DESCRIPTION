@@ -1,6 +1,6 @@
 Package: ggeasy
 Title: Easy Access to 'ggplot2' Commands
-Version: 0.1.4
+Version: 0.1.5
 Authors@R: c(
  person("Jonathan", "Carroll", email = "rpkg@jcarroll.com.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1404-5264")),
  person("Alicia", "Schep", email = "aschep@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-3915-0618")),
@@ -14,15 +14,17 @@ Description: Provides a series of aliases to commonly used but difficult
     to remember 'ggplot2' sequences.
 License: GPL (>= 2)
 Encoding: UTF-8
+Depends: R (>= 3.5.0)
 Imports: ggplot2, rlang
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2
 Suggests: knitr, rmarkdown, testthat (>= 2.1.0), clipr, labelled,
         patchwork, vdiffr, covr
 VignetteBuilder: knitr
-URL: https://github.com/jonocarroll/ggeasy
+URL: https://github.com/jonocarroll/ggeasy,
+        https://jonocarroll.github.io/ggeasy/
 BugReports: https://github.com/jonocarroll/ggeasy/issues
 NeedsCompilation: no
-Packaged: 2023-03-12 04:15:32 UTC; jono
+Packaged: 2024-11-03 05:16:02 UTC; jono
 Author: Jonathan Carroll [aut, cre] (<https://orcid.org/0000-0002-1404-5264>),
   Alicia Schep [aut] (<https://orcid.org/0000-0002-3915-0618>),
   Jonathan Sidi [aut] (<https://orcid.org/0000-0002-4222-1819>),
@@ -30,4 +32,4 @@ Author: Jonathan Carroll [aut, cre] (<https://orcid.org/0000-0002-1404-5264>),
   Mohamed El Fodil Ihaddaden [ctb],
   Thomas Neitmann [ctb]
 Repository: CRAN
-Date/Publication: 2023-03-12 10:00:23 UTC
+Date/Publication: 2024-11-03 05:50:02 UTC
