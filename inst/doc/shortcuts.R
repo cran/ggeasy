@@ -74,29 +74,6 @@ lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower\n
 var_label(iris_labs) <- split(lbl, names(iris_labs))
 
 ## ----fig.width = 8, fig.height = 8--------------------------------------------
-p <- ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
+ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_line(aes(colour = Species))
-
-p1 <- p + labs(title = "default labels")
-p2 <- p + 
-    easy_labs() + 
-    labs(title = "Replace titles with column labels")
-p3 <- p + 
-    easy_labs(x = 'My x axis') + 
-    labs(title = "Manually add x axis label")
-    
-iris_labs_2 <- iris_labs
-var_label(iris_labs_2$Species) <- "Sub-genera"
-
-p4 <- p + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
-    easy_labs() + 
-    labs(title = "Additional labels can be added in other aesthetics")
-
-(p1 + p2) / (p3 + p4)
-
-## ----fig.width = 8, fig.height = 8--------------------------------------------
-p4 + geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
-    facet_wrap(~Species) + 
-    easy_labs() + 
-    labs(title = "Facetting works")
 

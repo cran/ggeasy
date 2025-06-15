@@ -1,12 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggeasy <img src='man/figures/logo.gif' align="right" height="138.5" />
+# ggeasy <img src='man/figures/logo.gif' align="right" height="138" />
 
 <!-- http://www.clker.com/clipart-2-puzzle-pieces-connected.html -->
 
 [![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2023_03_11-brightgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2025_06_15-yellowgreen.svg)](https://github.com/jonocarroll/ggeasy/blob/master/tests/README.md)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/jonocarroll/ggeasy?branch=master&svg=true)](https://ci.appveyor.com/project/jonocarroll/ggeasy)
 [![R-CMD-check](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jonocarroll/ggeasy/actions/workflows/R-CMD-check.yaml)
@@ -64,11 +64,6 @@ video](https://img.youtube.com/vi/-2ZvQQ583pI/maxresdefault.jpg)](https://www.yo
 
 ``` r
 library(ggplot2)
-#> 
-#> Attaching package: 'ggplot2'
-#> The following object is masked from 'package:base':
-#> 
-#>     is.element
 library(ggeasy)
 
 # rotate x axis labels
@@ -167,24 +162,6 @@ ggplot(mtcars, aes(wt, mpg, colour = cyl, size = hp)) +
 ```
 
 ![](man/figures/example-10.png)<!-- -->
-
-``` r
-
-# use labelled variables
-iris_labs <- iris
-labelled::var_label(iris_labs$Species) <- "Flower\nSpecies"
-labelled::var_label(iris_labs$Sepal.Length) <- "Length of Sepal"
-iris_labs_2 <- iris_labs
-labelled::var_label(iris_labs_2$Species) <- "Sub-genera"
-
-# use variable labels automatically
-ggplot(iris_labs, aes(x = Sepal.Length, y = Sepal.Width)) +
-    geom_line(aes(colour = Species)) + 
-    geom_point(data = iris_labs_2, aes(fill = Species), shape = 24) +
-    easy_labs()
-```
-
-![](man/figures/example-11.png)<!-- -->
 
 These functions will try to teach you the ‘official’ way to achieve
 these goal, usually via the `teach` argument (where implemented)

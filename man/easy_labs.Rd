@@ -16,9 +16,11 @@ expression?}
 \description{
 Applies same logic as \code{\link[ggplot2]{labs}} but uses as default
 the column label attribute if present as the variable label in the plot.
+Note that as of ggplot2 3.5.2.9001 this behaviour is native and this function will
+be deprecated.
 }
 \examples{
-
+\dontrun{
 iris_labs <- iris
 
 lbl <- c('Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Flower Species')
@@ -34,5 +36,5 @@ p + easy_labs()
 p + easy_labs(title = "Plot Title", subtitle = 'Plot Subtitle', x = 'x axis label')
 
 p + easy_labs(teach = TRUE)
-
+}
 }
